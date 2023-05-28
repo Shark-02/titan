@@ -73,8 +73,10 @@
     <Compile Include="Assets\Egamea\Shared Assets\Scripts\iTween.cs" />
     <Compile Include="Assets\Egamea\Shared Assets\CodeStage\AdvancedFPSCounter\Scripts\CountersData\DeviceInfoCounterData.cs" />
     <Compile Include="Assets\Egamea\Shared Assets\CodeStage\AdvancedFPSCounter\Examples\APITester.cs" />
+    <Compile Include="Assets\IgniteCoders\Simple Water Shader\Info\Scripts\Readme.cs" />
     <Compile Include="Assets\Egamea\Shared Assets\Scripts\FPS Controller\MouseLook.cs" />
     <Compile Include="Assets\Egamea\ConjureScape\Scripts\EdgeDetector\EdgeAlertActivator.cs" />
+    <Compile Include="Assets\IgniteCoders\Simple Water Shader\Resources\WaterReflection.cs" />
     <Compile Include="Assets\Egamea\ConjureScape\Scripts\EdgeDetector\EdgeDetector.cs" />
     <Compile Include="Assets\Egamea\Shared Assets\CodeStage\AdvancedFPSCounter\Scripts\Utils\CachedNumbers.cs" />
     <Compile Include="Assets\Egamea\Shared Assets\CodeStage\AdvancedFPSCounter\Scripts\CountersData\Abstract\BaseCounterData.cs" />
