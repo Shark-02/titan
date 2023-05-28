@@ -81,12 +81,17 @@
     <Compile Include="Assets\Egamea\Shared Assets\CodeStage\AdvancedFPSCounter\Scripts\Utils\CachedNumbers.cs" />
     <Compile Include="Assets\Egamea\Shared Assets\CodeStage\AdvancedFPSCounter\Scripts\CountersData\Abstract\BaseCounterData.cs" />
     <Compile Include="Assets\Egamea\Shared Assets\Scripts\Optimization\TerrainOptimizer.cs" />
+    <Compile Include="Assets\Scripts\DissolveController.cs" />
+    <Compile Include="Assets\Scripts\explodeController.cs" />
+    <Compile Include="Assets\Portal Particle\Scrpt\CameraHolder.cs" />
+    <Compile Include="Assets\Scripts\LeadPlayer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Egamea\Shared Assets\TerrainShader\Standard-FirstPass-Color.shader" />
     <None Include="Assets\Egamea\Shared Assets\CodeStage\AdvancedFPSCounter\Changelog.txt" />
     <None Include="Assets\Egamea\ConjureScape\Documentation\Release Notes.txt" />
     <None Include="Assets\Egamea\Shared Assets\CodeStage\AdvancedFPSCounter\API.txt" />
+    <None Include="Assets\Hovl Studio\Realistic explosions\Demo scene\Readme.txt" />
     <None Include="Assets\Egamea\Shared Assets\TerrainShader\Standard-Base.shader" />
     <None Include="Assets\Egamea\Shared Assets\TerrainShader\TerrainSplatmapCustom.cginc" />
     <None Include="Assets\Egamea\Shared Assets\TerrainShader\Standard-FirstPass-NormalColor.shader" />
@@ -96,10 +101,13 @@
     <None Include="Assets\Egamea\Shared Assets\Scripts\CustomLODSystem.dll" />
     <None Include="Assets\Egamea\Shared Assets\TerrainShader\FirstPass-Color.shader" />
     <None Include="Assets\Egamea\Shared Assets\TerrainShader\FirstPass.shader" />
+    <None Include="Assets\Hovl Studio\Realistic explosions\Shaders\ShockWave.shader" />
     <None Include="Assets\Egamea\Shared Assets\TerrainShader\Standard-FirstPass.shader" />
     <None Include="Assets\Egamea\Shared Assets\TerrainShader\Standard-Base-Color.shader" />
     <None Include="Assets\Egamea\Shared Assets\TerrainShader\Standard-Base-NormalColor.shader" />
+    <None Include="Assets\Hovl Studio\Realistic explosions\Shaders\Add_CenterGlow.shader" />
     <None Include="Assets\Egamea\Shared Assets\TerrainShader\Standard-AddPass.shader" />
+    <None Include="Assets\prefabs\volcano\crack.shader" />
     <None Include="Assets\Egamea\Shared Assets\TerrainShader\AddPass-Color.shader" />
   </ItemGroup>
   <ItemGroup>
