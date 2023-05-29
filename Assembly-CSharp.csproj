@@ -57,11 +57,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Egamea\Shared Assets\CodeStage\AdvancedFPSCounter\Scripts\Utils\UIUtils.cs" />
+    <Compile Include="Assets\Scripts\DissolveController.cs" />
     <Compile Include="Assets\Egamea\Shared Assets\CodeStage\AdvancedFPSCounter\Scripts\Enums\FPSLevel.cs" />
     <Compile Include="Assets\Egamea\Shared Assets\CodeStage\AdvancedFPSCounter\Scripts\Label\LabelAnchor.cs" />
     <Compile Include="Assets\Egamea\Shared Assets\Scripts\FPS Controller\FOVKick.cs" />
     <Compile Include="Assets\Egamea\Shared Assets\Scripts\FPS Controller\FirstPersonController.cs" />
     <Compile Include="Assets\Egamea\Shared Assets\CodeStage\AdvancedFPSCounter\Scripts\CountersData\MemoryCounterData.cs" />
+    <Compile Include="Assets\Portal Particle\Scrpt\CameraHolder.cs" />
+    <Compile Include="Assets\Scripts\explodeController.cs" />
     <Compile Include="Assets\Egamea\Shared Assets\CodeStage\AdvancedFPSCounter\Scripts\Label\DrawableLabel.cs" />
     <Compile Include="Assets\Egamea\Shared Assets\CodeStage\AdvancedFPSCounter\Scripts\AFPSCounter.cs" />
     <Compile Include="Assets\Egamea\Shared Assets\CodeStage\AdvancedFPSCounter\Scripts\CountersData\FPSCounterData.cs" />
@@ -76,15 +79,12 @@
     <Compile Include="Assets\IgniteCoders\Simple Water Shader\Info\Scripts\Readme.cs" />
     <Compile Include="Assets\Egamea\Shared Assets\Scripts\FPS Controller\MouseLook.cs" />
     <Compile Include="Assets\Egamea\ConjureScape\Scripts\EdgeDetector\EdgeAlertActivator.cs" />
+    <Compile Include="Assets\Scripts\LeadPlayer.cs" />
     <Compile Include="Assets\IgniteCoders\Simple Water Shader\Resources\WaterReflection.cs" />
     <Compile Include="Assets\Egamea\ConjureScape\Scripts\EdgeDetector\EdgeDetector.cs" />
     <Compile Include="Assets\Egamea\Shared Assets\CodeStage\AdvancedFPSCounter\Scripts\Utils\CachedNumbers.cs" />
     <Compile Include="Assets\Egamea\Shared Assets\CodeStage\AdvancedFPSCounter\Scripts\CountersData\Abstract\BaseCounterData.cs" />
     <Compile Include="Assets\Egamea\Shared Assets\Scripts\Optimization\TerrainOptimizer.cs" />
-    <Compile Include="Assets\Scripts\DissolveController.cs" />
-    <Compile Include="Assets\Scripts\explodeController.cs" />
-    <Compile Include="Assets\Portal Particle\Scrpt\CameraHolder.cs" />
-    <Compile Include="Assets\Scripts\LeadPlayer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Egamea\Shared Assets\TerrainShader\Standard-FirstPass-Color.shader" />
