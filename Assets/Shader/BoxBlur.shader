@@ -3,7 +3,6 @@
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
-        _SampleCount("SampleCount",int)=3
         _BlurSize("BlurSize",float)=1
     }
     SubShader
@@ -14,12 +13,6 @@
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
-
-            uniform int _SampleCount;
-            uniform float _BlurSize;
-            uniform float _StartIndex;
-            uniform float _EndIndex;
-            uniform float _SamplePercent;
 
             #include "UnityCG.cginc"
 
@@ -38,6 +31,7 @@
             sampler2D _MainTex;
             float4 _MainTex_ST;
             uniform half4 _MainTex_TexelSize;
+            fixed _BlurSize;
 
             v2f vert(appdata v)
             {
@@ -49,16 +43,14 @@
 
             fixed4 frag(v2f i) : SV_Target
             {
-                float4 finalColor = fixed4(0, 0, 0, 1);
-                for (int y = _StartIndex; y <= _EndIndex; y++)
-                {
-                    for (int x = _StartIndex; x <= _EndIndex; x++)
-                    {
-                        fixed2 finalUV = i.uv + fixed2(x, y) * _MainTex_TexelSize.xy * _BlurSize;
-                        finalColor += tex2D(_MainTex, finalUV) / _SamplePercent;
-                    }
-                }
-                return finalColor;
+                fixed2 delta=_MainTex_TexelSize.xy*_BlurSize;
+                return (
+                    tex2D(_MainTex,i.uv)+
+                    tex2D(_MainTex,i.uv+fixed2(delta.x,0))+
+                    tex2D(_MainTex,i.uv-fixed2(delta.x,0))+
+                    tex2D(_MainTex,i.uv+fixed2(0,delta.y))+
+                    tex2D(_MainTex,i.uv-fixed2(0,delta.y))
+                    )*0.2;
             }
 
             

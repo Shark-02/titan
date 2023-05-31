@@ -8,22 +8,22 @@ using UnityEngine.Rendering.Universal;
 public class LeadPlayer : MonoBehaviour
 {
     //public GameObject camera;
-    DissolveController dc1,dc2,dc3;
-    explodeController ec1,ec2,ec3;
+    [SerializeField]DissolveController dc1,dc2,dc3;
+    [SerializeField]explodeController ec1,ec2,ec3;
     CameraShake cmshake;
     Volume blur;
     // Start is called before the first frame update
     void Start()
     {
         //ÁÑ·ì
-        dc1 = GameObject.Find("crack").GetComponent<DissolveController>();
-        dc2 = GameObject.Find("crack02").GetComponent<DissolveController>();
-        //dc3 = GameObject.Find("crack03").GetComponent<DissolveController>();
+        //dc1 = GameObject.Find("crack").GetComponent<DissolveController>();
+        //dc2 = GameObject.Find("crack02").GetComponent<DissolveController>();
+        ////dc3 = GameObject.Find("crack03").GetComponent<DissolveController>();
 
         //»ðÉ½
-        ec1 = GameObject.Find("Explosion1").GetComponent<explodeController>();
-        ec2 = GameObject.Find("Explosion2").GetComponent<explodeController>();
-        ec3 = GameObject.Find("Explosion3").GetComponent<explodeController>();
+        //ec1 = GameObject.Find("Explosion1").GetComponent<explodeController>();
+        //ec2 = GameObject.Find("Explosion2").GetComponent<explodeController>();
+        //ec3 = GameObject.Find("Explosion3").GetComponent<explodeController>();
 
         //cmshake = GetComponentIn<CameraShake>();
         //¾µÍ·Õð¶¯

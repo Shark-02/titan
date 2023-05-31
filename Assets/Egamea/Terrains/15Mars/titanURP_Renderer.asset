@@ -18,6 +18,20 @@ MonoBehaviour:
   ignorePostProcessingOption: 0
   cameraLayerMask:
     m_Bits: 4294967295
+--- !u!114 &-92677927814178723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 140c6569f57c82f4e9cb7ff655293c6f, type: 3}
+  m_Name: FogFeature
+  m_EditorClassIdentifier: 
+  m_Active: 0
+  fogMat: {fileID: 2100000, guid: 8b8a304bfb790774283308fd9c893cb2, type: 2}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32,8 +46,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debugShaders:
     debugReplacementPS: {fileID: 4800000, guid: cf852408f2e174538bcd9b7fda1c5ae7, type: 3}
-  m_RendererFeatures: []
-  m_RendererFeatureMap: 
+  m_RendererFeatures:
+  - {fileID: -92677927814178723}
+  - {fileID: 1220555799010235134}
+  m_RendererFeatureMap: 5dd81d6aeabdb6fefe528c4c0849f010
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
@@ -70,3 +86,17 @@ MonoBehaviour:
   m_ClusteredRendering: 0
   m_TileSize: 32
   m_IntermediateTextureMode: 1
+--- !u!114 &1220555799010235134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9508b63e7a746c94d8d4c0f1674e4c14, type: 3}
+  m_Name: BlurFeature
+  m_EditorClassIdentifier: 
+  m_Active: 0
+  blurMat: {fileID: 2100000, guid: de87acfda1a62d547aae4c5d0d37d831, type: 2}

@@ -9,6 +9,7 @@ TagManager:
   - loweffect
   - effect
   - lead
+  - Target
   layers:
   - Default
   - TransparentFX

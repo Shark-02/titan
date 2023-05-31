@@ -87,6 +87,23 @@
     <Compile Include="Assets\Egamea\Shared Assets\CodeStage\AdvancedFPSCounter\Scripts\CountersData\Abstract\BaseCounterData.cs" />
     <Compile Include="Assets\Egamea\Shared Assets\Scripts\Optimization\TerrainOptimizer.cs" />
     <Compile Include="Assets\Scripts\BoxBlur.cs" />
+    <Compile Include="Assets\Shader\BlurFeature.cs" />
+    <Compile Include="Assets\Shader\BlurController.cs" />
+    <Compile Include="Assets\Shader\FogFeature.cs" />
+    <Compile Include="Assets\Shader\SandStormManager.cs" />
+    <Compile Include="Assets\Scripts\RocketTurret.cs" />
+    <Compile Include="Assets\Scripts\Rocket.cs" />
+    <Compile Include="Assets\Scripts\MathTool.cs" />
+    <Compile Include="Assets\Scripts\FX_Destory.cs" />
+    <Compile Include="Assets\Scripts\Control\InputCommand.cs" />
+    <Compile Include="Assets\Scripts\Control\VRPlayerController.cs" />
+    <Compile Include="Assets\Scripts\Control\Logger.cs" />
+    <Compile Include="Assets\Scripts\Control\KeysForPCTest.cs" />
+    <Compile Include="Assets\Scripts\Control\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Control\PCPlayerController.cs" />
+    <Compile Include="Assets\Scripts\Control\DeviceSelector.cs" />
+    <Compile Include="Assets\Scripts\CurtainController.cs" />
+    <Compile Include="Assets\Scripts\RenderFeatureManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Egamea\Shared Assets\TerrainShader\Standard-FirstPass-Color.shader" />
@@ -94,6 +111,7 @@
     <None Include="Assets\Egamea\ConjureScape\Documentation\Release Notes.txt" />
     <None Include="Assets\Shader\BoxBlur.shader" />
     <None Include="Assets\Egamea\Shared Assets\CodeStage\AdvancedFPSCounter\API.txt" />
+    <None Include="Assets\Shader\DepthFog.shader" />
     <None Include="Assets\Hovl Studio\Realistic explosions\Demo scene\Readme.txt" />
     <None Include="Assets\Egamea\Shared Assets\TerrainShader\Standard-Base.shader" />
     <None Include="Assets\Egamea\Shared Assets\TerrainShader\TerrainSplatmapCustom.cginc" />
