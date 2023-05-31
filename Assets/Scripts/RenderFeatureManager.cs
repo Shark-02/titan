@@ -6,25 +6,31 @@ using UnityEngine.Rendering.Universal;
 public class RenderFeatureManager : MonoBehaviour
 {
     [SerializeField] UniversalRendererData universalRendererData;
-    private void Update()
+    static RenderFeatureManager instance;
+    public static RenderFeatureManager Instance => instance;
+    private void Start()
     {
-        if(Input.GetKeyDown(KeyCode.Q))
-        {
-            EnableRenderFeature("FogFeature");
-        }
-        if(Input.GetKeyUp(KeyCode.Q))
-        {
-            DisableRenderFeature("FogFeature");
-        }
-        if(Input.GetKeyDown(KeyCode.E))
-        {
-            EnableRenderFeature("BlurFeature");
-        }
-        if(Input.GetKeyUp(KeyCode.E))
-        {
-            DisableRenderFeature("BlurFeature");
-        }
+        instance = this;
     }
+    //private void Update()
+    //{
+    //    if(Input.GetKeyDown(KeyCode.Q))
+    //    {
+    //        EnableRenderFeature("FogFeature");
+    //    }
+    //    if(Input.GetKeyUp(KeyCode.Q))
+    //    {
+    //        DisableRenderFeature("FogFeature");
+    //    }
+    //    if(Input.GetKeyDown(KeyCode.E))
+    //    {
+    //        EnableRenderFeature("BlurFeature");
+    //    }
+    //    if(Input.GetKeyUp(KeyCode.E))
+    //    {
+    //        DisableRenderFeature("BlurFeature");
+    //    }
+    //}
     public void EnableRenderFeature(string featureName)
     {
         foreach(var renderFeature in universalRendererData.rendererFeatures)

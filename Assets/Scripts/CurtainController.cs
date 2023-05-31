@@ -20,13 +20,13 @@ public class CurtainController : MonoBehaviour
     {
         if (coroutine != null)
             StopCoroutine(coroutine);
-        StartCoroutine(ShowCurtainCoroutine(timePeriod));
+        coroutine = StartCoroutine(ShowCurtainCoroutine(timePeriod));
     }
     public void HideCurtain(float timePeriod)
     {
         if (coroutine != null)
             StopCoroutine(coroutine);
-        StartCoroutine(HideCurtainCoroutine(timePeriod));
+        coroutine = StartCoroutine(HideCurtainCoroutine(timePeriod));
     }
     IEnumerator ShowCurtainCoroutine(float timePeriod)
     {
@@ -34,7 +34,7 @@ public class CurtainController : MonoBehaviour
         float sumTime = 0;
         Color c = curtain.color;
         c.a = 0;
-        while(sumTime<timePeriod)
+        while (sumTime < timePeriod)
         {
             sumTime += Time.deltaTime;
             c.a = sumTime / timePeriod;
@@ -49,7 +49,7 @@ public class CurtainController : MonoBehaviour
         float sumTime = timePeriod;
         Color c = curtain.color;
         c.a = 1;
-        while(sumTime>0)
+        while (sumTime > 0)
         {
             sumTime -= Time.deltaTime;
             c.a = sumTime / timePeriod;

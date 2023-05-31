@@ -14,6 +14,17 @@ public class PlayerController : MonoBehaviour
     [Range(0, 100)] public float gravityValue = 1.35f;
     [HideInInspector] public bool isAirBorne;
     [HideInInspector] public bool isCrouch;
+    [Header("»èÃÔ")]
+    public bool coma;
+    public float comaduration = 20;    //»èÃÔ¼ä¸ô
+    public float comatime = 0.5f; //»èÃÔÊ±³¤
+
+    static PlayerController instance;
+    public static PlayerController Instance => instance;
+    private void Start()
+    {
+        instance = this;
+    }
     public void HandleInput(InputCommand command)
     {
         this.command = command;
@@ -54,5 +65,33 @@ public class PlayerController : MonoBehaviour
         player.Move(currentVelocity * Time.deltaTime);
         if (player.isGrounded)
             currentVelocity.y = -.1f;
+    }
+    public void HitByStone(bool killPlayer)
+    {
+        if(killPlayer)
+        {
+            Killed();
+        }
+        else
+        {
+            Coma();
+        }
+    }
+    private IEnumerator Comacoroutine(float comatime,float comaduration)
+    {
+        coma = true;
+        CurtainController.Instance.ShowCurtain(comatime);
+        yield return new WaitForSeconds(comaduration);
+        Debug.Log("Coroutine ended after " + comaduration + " seconds.");
+        CurtainController.Instance.HideCurtain(1);
+        coma = false;
+    }
+    void Killed()
+    {
+        Debug.Log("Killed");
+    }
+    void Coma()
+    {
+        StartCoroutine(Comacoroutine(comatime, comaduration));
     }
 }

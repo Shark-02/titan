@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PCPlayerController : MonoBehaviour
 {
-    public PlayerController playerController;
     [Header("Ðý×ª")]
     public Transform camParent;
     public float xSensitivity;
@@ -17,7 +16,7 @@ public class PCPlayerController : MonoBehaviour
     InputCommand command;
     void Update()
     {
-        playerController.HandleInput(new InputCommand(GetXZDir(), Input.GetKey(KeysForPCTest.crouchKey), Input.GetKeyDown(KeysForPCTest.jumpKey),EulerAnglesChange(), InputCommand.InAngleType.TARGET));
+        PlayerController.Instance.HandleInput(new InputCommand(GetXZDir(), Input.GetKey(KeysForPCTest.crouchKey), Input.GetKeyDown(KeysForPCTest.jumpKey),EulerAnglesChange(), InputCommand.InAngleType.TARGET));
     }
     Vector3 EulerAnglesChange()
     {

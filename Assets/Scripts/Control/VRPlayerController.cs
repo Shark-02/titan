@@ -8,7 +8,6 @@ using UnityEngine.XR;
 
 public class VRPlayerController : MonoBehaviour
 {
-    public PlayerController playerController;
     public XROrigin xrOrigin;
     public float jumpThreshold = .2f;
     public float crouchThreshold = -.5f;
@@ -28,6 +27,6 @@ public class VRPlayerController : MonoBehaviour
         bool leftPrimaryButton, rightPrimaryButton;
         leftController.TryGetFeatureValue(UnityEngine.XR.CommonUsages.primaryButton, out leftPrimaryButton);
         rightController.TryGetFeatureValue(UnityEngine.XR.CommonUsages.primaryButton, out rightPrimaryButton);
-        playerController.HandleInput(new InputCommand(Vector3.zero, rightPrimaryButton, leftPrimaryButton, Vector3.zero, InputCommand.InAngleType.DELTA));
+        PlayerController.Instance.HandleInput(new InputCommand(Vector3.zero, rightPrimaryButton, leftPrimaryButton, Vector3.zero, InputCommand.InAngleType.DELTA));
     }
 }

@@ -8,8 +8,10 @@ using UnityEngine.Rendering.Universal;
 public class LeadPlayer : MonoBehaviour
 {
     //public GameObject camera;
-    [SerializeField]DissolveController dc1,dc2,dc3;
+    [SerializeField]DissolveController dc1,dc2/*,dc3*/;
     [SerializeField]explodeController ec1,ec2,ec3;
+    RocketTurret rt;
+    [SerializeField] List<RocketTurret> rts;
     CameraShake cmshake;
     Volume blur;
     // Start is called before the first frame update
@@ -31,6 +33,9 @@ public class LeadPlayer : MonoBehaviour
 
         //视线模糊
         //BeautifySettings.settings.blurIntensity.Override(0.5f);
+
+        //石头发射
+        rt = GameObject.Find("ShootSpot").GetComponentInChildren<RocketTurret>();
     }
 
     // Update is called once per frame
@@ -45,8 +50,11 @@ public class LeadPlayer : MonoBehaviour
         {
             Destroy(other.gameObject);
         }
-
-        if(other.gameObject.name == "EndTarget")
+        else if (other.gameObject.tag == "lead2")
+        {
+            Destroy(other.gameObject);
+        }
+        if (other.gameObject.name == "EndTarget")
         {
             dc1.active = true;
             dc2.active = true;
@@ -54,9 +62,20 @@ public class LeadPlayer : MonoBehaviour
             ec1.active = true;
             ec2.active = true;
             ec3.active = true;
+            rt.arrived = true;
             StartCoroutine(cmshake.Shake(10.0f, 0.25f));
             Destroy(other.gameObject);
             StartCoroutine(StopParticle());
+            GameObject[] flead = GameObject.FindGameObjectsWithTag("lead");
+            foreach (GameObject leads in flead)
+            {
+                Destroy(leads);
+            }
+        }
+        else if(other.gameObject.name=="ShootersTrigger")
+        {
+            StartCoroutine("ShootersCoroutine");
+            Destroy(other.gameObject);
         }
     }
 
@@ -69,7 +88,14 @@ public class LeadPlayer : MonoBehaviour
 
     }
 
-
-
-
+    IEnumerator ShootersCoroutine()
+    {
+        RenderFeatureManager.Instance.EnableRenderFeature("FogFeature");
+        SandStormManager.Instance.StartSandStorm(10f);
+        foreach (var shooter in rts)
+        {
+            shooter.arrived = true;
+            yield return new WaitForSeconds(2f);
+        }
+    }
 }
