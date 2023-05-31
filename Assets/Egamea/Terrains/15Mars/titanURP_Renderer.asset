@@ -30,7 +30,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 140c6569f57c82f4e9cb7ff655293c6f, type: 3}
   m_Name: FogFeature
   m_EditorClassIdentifier: 
-  m_Active: 1
+  m_Active: 0
   fogMat: {fileID: 2100000, guid: 8b8a304bfb790774283308fd9c893cb2, type: 2}
 --- !u!114 &11400000
 MonoBehaviour:

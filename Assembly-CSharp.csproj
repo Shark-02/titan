@@ -86,6 +86,7 @@
     <Compile Include="Assets\Egamea\ConjureScape\Scripts\ColliderManager.cs" />
     <Compile Include="Assets\Scripts\Rocket.cs" />
     <Compile Include="Assets\Scripts\Control\KeysForPCTest.cs" />
+    <Compile Include="Assets\Scripts\NavPathArrow.cs" />
     <Compile Include="Assets\Egamea\Shared Assets\CodeStage\AdvancedFPSCounter\Scripts\Utils\AFPSRenderRecorder.cs" />
     <Compile Include="Assets\Shader\FogFeature.cs" />
     <Compile Include="Assets\Egamea\Shared Assets\Scripts\iTween.cs" />
@@ -128,6 +129,7 @@
     <None Include="Assets\Egamea\Shared Assets\TerrainShader\Standard-Base-NormalColor.shader" />
     <None Include="Assets\Hovl Studio\Realistic explosions\Shaders\Add_CenterGlow.shader" />
     <None Include="Assets\Egamea\Shared Assets\TerrainShader\Standard-AddPass.shader" />
+    <None Include="Assets\Shader\NavPathArrow.shader" />
     <None Include="Assets\prefabs\volcano\crack.shader" />
     <None Include="Assets\Egamea\Shared Assets\TerrainShader\AddPass-Color.shader" />
   </ItemGroup>

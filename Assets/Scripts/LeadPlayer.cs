@@ -10,6 +10,7 @@ public class LeadPlayer : MonoBehaviour
     //public GameObject camera;
     [SerializeField]DissolveController dc1,dc2/*,dc3*/;
     [SerializeField]explodeController ec1,ec2,ec3;
+    [SerializeField] NavPathArrow npa;
     RocketTurret rt;
     [SerializeField] List<RocketTurret> rts;
     CameraShake cmshake;
@@ -71,17 +72,23 @@ public class LeadPlayer : MonoBehaviour
             {
                 Destroy(leads);
             }
+            npa.HidePath();
         }
         else if(other.gameObject.name=="ShootersTrigger")
         {
             StartCoroutine("ShootersCoroutine");
             Destroy(other.gameObject);
         }
+        else if (other.gameObject.name == "SeaEnd")
+        {
+            Destroy(other.gameObject);
+            NavPathArrow.Instance.HidePath();
+        }
     }
 
     IEnumerator StopParticle()
     {
-        yield return new WaitForSeconds(30.0f);
+        yield return new WaitForSeconds(10.0f);
         ec1.active = false;
         ec2.active = false;
         ec3.active = false;

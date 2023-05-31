@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     public bool coma;
     public float comaduration = 20;    //»èÃÔ¼ä¸ô
     public float comatime = 0.5f; //»èÃÔÊ±³¤
+    public Transform seaend;
 
     static PlayerController instance;
     public static PlayerController Instance => instance;
@@ -84,6 +85,8 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(comaduration);
         Debug.Log("Coroutine ended after " + comaduration + " seconds.");
         CurtainController.Instance.HideCurtain(1);
+        NavPathArrow.Instance.points[1] = seaend;
+        NavPathArrow.Instance.ShowPath();
         coma = false;
     }
     void Killed()
