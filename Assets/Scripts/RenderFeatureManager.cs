@@ -3,9 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
+[DefaultExecutionOrder(-100)]
 public class RenderFeatureManager : MonoBehaviour
 {
+    static RenderFeatureManager instance;
+    public static RenderFeatureManager Instance => instance;
     [SerializeField] UniversalRendererData universalRendererData;
+    private void Awake()
+    {
+        instance = this;
+    }
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.Q))
