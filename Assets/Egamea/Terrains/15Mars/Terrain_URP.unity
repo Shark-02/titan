@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.548
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1406585425}
-  m_IndirectSpecularColor: {r: 0.25661168, g: 0.1861428, b: 0.13642764, a: 0.548}
+  m_IndirectSpecularColor: {r: 0.25637233, g: 0.18581894, b: 0.13615182, a: 0.548}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -83060,8 +83060,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 88834353}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 229.4, y: 56.1, z: 229.7}
-  m_LocalScale: {x: 120, y: 43.1, z: 113}
+  m_LocalPosition: {x: 229.4, y: 56.1, z: 225.2}
+  m_LocalScale: {x: 75, y: 43.1, z: 113}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -363652,7 +363652,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7648668748411535250, guid: 587ac7d1ee875614ba574c813c0d89e3, type: 3}
       propertyPath: m_RootOrder
-      value: 34
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 7648668748411535250, guid: 587ac7d1ee875614ba574c813c0d89e3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -981596,7 +981596,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 37
+  m_RootOrder: 38
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1025889805
 MonoBehaviour:
@@ -1354694,7 +1354694,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7648668748411535250, guid: 587ac7d1ee875614ba574c813c0d89e3, type: 3}
       propertyPath: m_RootOrder
-      value: 36
+      value: 37
       objectReference: {fileID: 0}
     - target: {fileID: 7648668748411535250, guid: 587ac7d1ee875614ba574c813c0d89e3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1735314,7 +1735314,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 38
+  m_RootOrder: 39
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1817673793
 PrefabInstance:
@@ -1843445,7 +1843445,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7648668748411535250, guid: 587ac7d1ee875614ba574c813c0d89e3, type: 3}
       propertyPath: m_RootOrder
-      value: 35
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 7648668748411535250, guid: 587ac7d1ee875614ba574c813c0d89e3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1964866,6 +1964866,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da294b48fc1534b5dac281ca6778b939, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2063343663
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2063343665}
+  - component: {fileID: 2063343664}
+  m_Layer: 0
+  m_Name: SandStormTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &2063343664
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2063343663}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &2063343665
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2063343663}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 229.4, y: 56.1, z: 193}
+  m_LocalScale: {x: 75, y: 43.1, z: 113}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 34
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2063363460
 PrefabInstance:
   m_ObjectHideFlags: 0

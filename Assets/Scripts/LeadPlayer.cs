@@ -90,6 +90,11 @@ public class LeadPlayer : MonoBehaviour
             ads.PlayOneShot(clips[3]);
             Destroy(other.gameObject);
         }
+        else if(other.gameObject.name=="SandStormTrigger")
+        {
+            sandStormManager.StartSandStorm(20f);
+            Destroy(other.gameObject);
+        }
         else if (other.gameObject.name == "SeaEnd")
         {
             audioplayer.Stop();
@@ -113,7 +118,6 @@ public class LeadPlayer : MonoBehaviour
 
     IEnumerator ShootersCoroutine()
     {
-        sandStormManager.StartSandStorm(10f);
         foreach (var shooter in rts)
         {
             shooter.arrived = true;
