@@ -13,25 +13,25 @@ public class RenderFeatureManager : MonoBehaviour
     {
         instance = this;
     }
-    private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Q))
-        {
-            EnableRenderFeature("FogFeature");
-        }
-        if(Input.GetKeyUp(KeyCode.Q))
-        {
-            DisableRenderFeature("FogFeature");
-        }
-        if(Input.GetKeyDown(KeyCode.E))
-        {
-            EnableRenderFeature("BlurFeature");
-        }
-        if(Input.GetKeyUp(KeyCode.E))
-        {
-            DisableRenderFeature("BlurFeature");
-        }
-    }
+    //private void Update()
+    //{
+    //    if(Input.GetKeyDown(KeyCode.Q))
+    //    {
+    //        EnableRenderFeature("FogFeature");
+    //    }
+    //    if(Input.GetKeyUp(KeyCode.Q))
+    //    {
+    //        DisableRenderFeature("FogFeature");
+    //    }
+    //    if(Input.GetKeyDown(KeyCode.E))
+    //    {
+    //        EnableRenderFeature("BlurFeature");
+    //    }
+    //    if(Input.GetKeyUp(KeyCode.E))
+    //    {
+    //        DisableRenderFeature("BlurFeature");
+    //    }
+    //}
     public void EnableRenderFeature(string featureName)
     {
         foreach(var renderFeature in universalRendererData.rendererFeatures)

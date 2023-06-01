@@ -4,7 +4,8 @@
 public enum RocketType
 {
     Follow,
-    Prognosis
+    Prognosis,
+    NoFollow
 }
 
 
@@ -32,6 +33,10 @@ public class Rocket : MonoBehaviour
             lastTime = Time.time;               //首先初始化 lastTime 和 lastPos
             lastPos = target.position;
         }
+        else if(rocketType==RocketType.NoFollow&&target!=null)
+        {
+            transform.LookAt(target.transform.position);
+        }
         //rocketTurret.Instance.hitted = this.hitted;
     }
 
@@ -42,6 +47,8 @@ public class Rocket : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (transform.position.y < -100)
+            Destroy(gameObject);
         if (target != null)
         {
             switch (rocketType)
@@ -61,11 +68,10 @@ public class Rocket : MonoBehaviour
                         //Destroy(tempFX, 1);       //等待 1秒 销毁刚才创建生成的爆炸特效
                         hitted = true; //击中
                         Debug.Log(hitted);
-                        RocketTurret.Instance.hitted = hitted;
+                        rocketTurret.hitted = hitted;
                     }
                     break;
                 case RocketType.Prognosis:
-
                     float targetSpeed = MathTool.GetRightSpeed(lastPos, target.position, lastTime, Time.time);
                     Vector3 rightPos = MathTool.GetRightPos(targetSpeed, selfSpeed, lastPos, transform, target);   //计算 正确的 目标点
 
@@ -85,8 +91,20 @@ public class Rocket : MonoBehaviour
                         Destroy(gameObject);      //销毁自己
                         //Destroy(tempFX, 1);       //等待 1秒 销毁刚才创建生成的爆炸特效
                         hitted = true; //击中
-                        RocketTurret.Instance.hitted = hitted;
+                        rocketTurret.hitted = hitted;
 
+                        Debug.Log(hitted);
+                    }
+                    break;
+                case RocketType.NoFollow:
+                    float currentDist3 = Vector3.Distance(this.transform.position, target.transform.position);
+                    if (currentDist3 < 1f)
+                    {
+                        //GameObject tempFX = Instantiate(FX, transform.position, transform.rotation);  //生成一个爆炸特效 并给予位置和旋转信息
+                        Destroy(gameObject);      //销毁自己
+                        //Destroy(tempFX, 1);       //等待 1秒 销毁刚才创建生成的爆炸特效
+                        hitted = true; //击中
+                        rocketTurret.hitted = hitted;
                         Debug.Log(hitted);
                     }
                     break;

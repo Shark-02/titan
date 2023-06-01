@@ -8,41 +8,39 @@ public class SandStormManager : MonoBehaviour
     public static SandStormManager Instance;
     public Material fogMat;
     public float fogDensity = 0.1f;
-    public float fadeTime = 1f;
     Coroutine coroutine;
 #if UNITY_EDITOR
     private void Awake()
     {
-        if (Instance == null)
-            Instance = this;
+        Instance = this;
     }
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Q))
-            StartSandStorm();
-        else if (Input.GetKeyDown(KeyCode.E))
-            EndSandStorm();
-    }
+    //private void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.Q))
+    //        StartSandStorm();
+    //    else if (Input.GetKeyDown(KeyCode.E))
+    //        EndSandStorm();
+    //}
 #endif
-    public void StartSandStorm()
+    public void StartSandStorm(float fadeTime)
     {
         if (coroutine != null)
         {
             StopCoroutine(coroutine);
             coroutine = null;
         }
-        coroutine = StartCoroutine(StartSandStormCoroutine());
+        coroutine = StartCoroutine(StartSandStormCoroutine(fadeTime));
     }
-    public void EndSandStorm()
+    public void EndSandStorm(float fadeTime)
     {
         if (coroutine != null)
         {
             StopCoroutine(coroutine);
             coroutine = null;
         }
-        coroutine = StartCoroutine(EndSandStormCoroutine());
+        coroutine = StartCoroutine(EndSandStormCoroutine(fadeTime));
     }
-    IEnumerator StartSandStormCoroutine()
+    IEnumerator StartSandStormCoroutine(float fadeTime)
     {
         float sumTime = 0;
         while (sumTime < fadeTime)
@@ -54,7 +52,7 @@ public class SandStormManager : MonoBehaviour
         }
         fogMat.SetFloat("_Density", fogDensity);
     }
-    IEnumerator EndSandStormCoroutine()
+    IEnumerator EndSandStormCoroutine(float fadeTime)
     {
         float sumTime = fadeTime;
         while (sumTime > 0)
