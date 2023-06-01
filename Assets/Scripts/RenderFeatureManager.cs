@@ -11,32 +11,21 @@ public class RenderFeatureManager : MonoBehaviour
     [SerializeField] UniversalRendererData universalRendererData;
     private void Awake()
     {
-        instance = this;
+        if(!instance)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
-    //private void Update()
-    //{
-    //    if(Input.GetKeyDown(KeyCode.Q))
-    //    {
-    //        EnableRenderFeature("FogFeature");
-    //    }
-    //    if(Input.GetKeyUp(KeyCode.Q))
-    //    {
-    //        DisableRenderFeature("FogFeature");
-    //    }
-    //    if(Input.GetKeyDown(KeyCode.E))
-    //    {
-    //        EnableRenderFeature("BlurFeature");
-    //    }
-    //    if(Input.GetKeyUp(KeyCode.E))
-    //    {
-    //        DisableRenderFeature("BlurFeature");
-    //    }
-    //}
     public void EnableRenderFeature(string featureName)
     {
-        foreach(var renderFeature in universalRendererData.rendererFeatures)
+        foreach (var renderFeature in universalRendererData.rendererFeatures)
         {
-            if(featureName==renderFeature.name)
+            if (featureName == renderFeature.name)
             {
                 renderFeature.SetActive(true);
             }
@@ -51,5 +40,10 @@ public class RenderFeatureManager : MonoBehaviour
                 renderFeature.SetActive(false);
             }
         }
+    }
+    private void OnDisable()
+    {
+        foreach (var renderFeature in universalRendererData.rendererFeatures)
+            renderFeature.SetActive(false);
     }
 }

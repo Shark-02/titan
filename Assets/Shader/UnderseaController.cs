@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class UnderseaController : MonoBehaviour
 {
+    public string targetRenderFeature = "UnderseaFeature";
     private void OnEnable()
     {
-        RenderFeatureManager.Instance.EnableRenderFeature("UnderseaFeature");
+        RenderFeatureManager.Instance.EnableRenderFeature(targetRenderFeature);
     }
     private void OnDisable()
     {
-        RenderFeatureManager.Instance.DisableRenderFeature("UnderseaFeature");
+        RenderFeatureManager.Instance.DisableRenderFeature(targetRenderFeature);
     }
 }
