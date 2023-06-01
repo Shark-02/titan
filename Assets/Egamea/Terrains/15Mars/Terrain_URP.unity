@@ -849454,7 +849454,7 @@ GameObject:
   - component: {fileID: 887700213}
   - component: {fileID: 887700212}
   - component: {fileID: 887700211}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: CurtainCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -849469,8 +849469,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 887700209}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1873049101}
@@ -849480,8 +849480,8 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1046.5, y: 451.5}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
 --- !u!114 &887700211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -849521,7 +849521,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!223 &887700213
 Canvas:
   m_ObjectHideFlags: 0
@@ -849531,9 +849531,9 @@ Canvas:
   m_GameObject: {fileID: 887700209}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 2
-  m_Camera: {fileID: 1348687614}
-  m_PlaneDistance: 100
+  m_RenderMode: 1
+  m_Camera: {fileID: 1667348749}
+  m_PlaneDistance: 0.4
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -1787397,7 +1787397,7 @@ RectTransform:
   m_GameObject: {fileID: 1873049100}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 887700210}
@@ -1787406,7 +1787406,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1000, y: 1000}
+  m_SizeDelta: {x: 3000, y: 3000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1873049102
 MonoBehaviour:
@@ -1929661,7 +1929661,7 @@ MonoBehaviour:
   target: {fileID: 1482113415}
   rocket: {fileID: 2119194101852464653, guid: 95f0573b7171dee4face73affb7d60c6, type: 3}
   firePoint: {fileID: 2025623601}
-  fireSpeed: 25
+  fireSpeed: 5
   hitted: 0
   arrived: 0
   killPlayer: 0
