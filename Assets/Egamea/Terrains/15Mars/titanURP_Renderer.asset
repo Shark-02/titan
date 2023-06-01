@@ -113,5 +113,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e38a7d9a000d4b4f8793ff3b8843428, type: 3}
   m_Name: UnderseaFeature
   m_EditorClassIdentifier: 
-  m_Active: 1
+  m_Active: 0
   blurMat: {fileID: 2100000, guid: dccbca12bf659894eb9bca9a509d4126, type: 2}

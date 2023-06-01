@@ -15,6 +15,7 @@ public class RenderFeatureManager : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
+            ClearRenderFeature();
         }
         else
         {
@@ -41,9 +42,13 @@ public class RenderFeatureManager : MonoBehaviour
             }
         }
     }
-    private void OnDisable()
+    public void ClearRenderFeature()
     {
         foreach (var renderFeature in universalRendererData.rendererFeatures)
             renderFeature.SetActive(false);
+    }
+    private void OnDisable()
+    {
+        ClearRenderFeature();
     }
 }
