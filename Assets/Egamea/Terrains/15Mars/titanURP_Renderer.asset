@@ -49,7 +49,8 @@ MonoBehaviour:
   m_RendererFeatures:
   - {fileID: -92677927814178723}
   - {fileID: 1220555799010235134}
-  m_RendererFeatureMap: 5dd81d6aeabdb6fefe528c4c0849f010
+  - {fileID: 8317120467160034871}
+  m_RendererFeatureMap: 5dd81d6aeabdb6fefe528c4c0849f010376e34b7ff586c73
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
@@ -100,3 +101,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Active: 0
   blurMat: {fileID: 2100000, guid: de87acfda1a62d547aae4c5d0d37d831, type: 2}
+--- !u!114 &8317120467160034871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e38a7d9a000d4b4f8793ff3b8843428, type: 3}
+  m_Name: UnderseaFeature
+  m_EditorClassIdentifier: 
+  m_Active: 0
+  blurMat: {fileID: 2100000, guid: dccbca12bf659894eb9bca9a509d4126, type: 2}

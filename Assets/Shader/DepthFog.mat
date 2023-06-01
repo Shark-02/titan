@@ -28,6 +28,7 @@ Material:
     m_Floats:
     - _Density: 0.1
     - _EndDist: 1002.06
+    - _MaxIntensity: 0.9
     - _StartDist: 0
     m_Colors:
     - _FogColor: {r: 0.8679245, g: 0.6101463, b: 0.25710213, a: 1}

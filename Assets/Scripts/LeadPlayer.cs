@@ -17,6 +17,7 @@ public class LeadPlayer : MonoBehaviour
     public AudioClip[] clips;
     AudioSource audioplayer;
     Volume blur;
+    [SerializeField] SandStormManager sandStormManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -104,8 +105,7 @@ public class LeadPlayer : MonoBehaviour
 
     IEnumerator ShootersCoroutine()
     {
-        RenderFeatureManager.Instance.EnableRenderFeature("FogFeature");
-        SandStormManager.Instance.StartSandStorm(10f);
+        sandStormManager.StartSandStorm(10f);
         foreach (var shooter in rts)
         {
             shooter.arrived = true;

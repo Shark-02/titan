@@ -3,39 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
+[DefaultExecutionOrder(-100)]
 public class RenderFeatureManager : MonoBehaviour
 {
-    [SerializeField] UniversalRendererData universalRendererData;
     static RenderFeatureManager instance;
     public static RenderFeatureManager Instance => instance;
-    private void Start()
+    [SerializeField] UniversalRendererData universalRendererData;
+    private void Awake()
     {
-        instance = this;
+        if(!instance)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+            ClearRenderFeature();
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
-    //private void Update()
-    //{
-    //    if(Input.GetKeyDown(KeyCode.Q))
-    //    {
-    //        EnableRenderFeature("FogFeature");
-    //    }
-    //    if(Input.GetKeyUp(KeyCode.Q))
-    //    {
-    //        DisableRenderFeature("FogFeature");
-    //    }
-    //    if(Input.GetKeyDown(KeyCode.E))
-    //    {
-    //        EnableRenderFeature("BlurFeature");
-    //    }
-    //    if(Input.GetKeyUp(KeyCode.E))
-    //    {
-    //        DisableRenderFeature("BlurFeature");
-    //    }
-    //}
     public void EnableRenderFeature(string featureName)
     {
-        foreach(var renderFeature in universalRendererData.rendererFeatures)
+        foreach (var renderFeature in universalRendererData.rendererFeatures)
         {
-            if(featureName==renderFeature.name)
+            if (featureName == renderFeature.name)
             {
                 renderFeature.SetActive(true);
             }
@@ -50,5 +41,14 @@ public class RenderFeatureManager : MonoBehaviour
                 renderFeature.SetActive(false);
             }
         }
+    }
+    public void ClearRenderFeature()
+    {
+        foreach (var renderFeature in universalRendererData.rendererFeatures)
+            renderFeature.SetActive(false);
+    }
+    private void OnDisable()
+    {
+        ClearRenderFeature();
     }
 }

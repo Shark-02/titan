@@ -5,23 +5,10 @@ using UnityEngine.Rendering.Universal;
 
 public class SandStormManager : MonoBehaviour
 {
-    public static SandStormManager Instance;
+    public string targetRenderFeature = "FogFeature";
     public Material fogMat;
     public float fogDensity = 0.1f;
     Coroutine coroutine;
-#if UNITY_EDITOR
-    private void Awake()
-    {
-        Instance = this;
-    }
-    //private void Update()
-    //{
-    //    if (Input.GetKeyDown(KeyCode.Q))
-    //        StartSandStorm();
-    //    else if (Input.GetKeyDown(KeyCode.E))
-    //        EndSandStorm();
-    //}
-#endif
     public void StartSandStorm(float fadeTime)
     {
         if (coroutine != null)
@@ -42,6 +29,7 @@ public class SandStormManager : MonoBehaviour
     }
     IEnumerator StartSandStormCoroutine(float fadeTime)
     {
+        RenderFeatureManager.Instance.EnableRenderFeature(targetRenderFeature);
         float sumTime = 0;
         while (sumTime < fadeTime)
         {
@@ -63,5 +51,6 @@ public class SandStormManager : MonoBehaviour
             yield return null;
         }
         fogMat.SetFloat("_Density", 0);
+        RenderFeatureManager.Instance.DisableRenderFeature(targetRenderFeature);
     }
 }

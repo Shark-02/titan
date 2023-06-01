@@ -6,6 +6,7 @@ Shader "Custom/DepthFog"
         _FogColor("FogColor",COLOR)=(1,1,1,1)
         _StartDist("StartDist",float)=0
         _Density("Density",float)=0.1
+        _MaxIntensity("MaxIntensity",Range(0,1))=1
     }
     SubShader
     {
@@ -44,6 +45,7 @@ Shader "Custom/DepthFog"
             float _StartDist;
             float _EndDist;
             float _Density;
+            float _MaxIntensity;
 
             v2f vert (appdata v)
             {
@@ -64,7 +66,7 @@ Shader "Custom/DepthFog"
                 //return 0;
                 //return fixed4(i.uv.x,i.uv.y,1,1);
                 //return col;
-                return lerp(_FogColor,col,factor);
+                return lerp(_FogColor,col,max(factor,1-_MaxIntensity));
             }
             ENDCG
         }

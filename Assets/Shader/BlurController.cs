@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class BlurController : MonoBehaviour
 {
+    public string targetRenderFeature = "BlurFeature";
     public Material blurMat;
-    public void SetBlur(int sampleCount, float blurSize)
+    public void StartBlur()
     {
-        blurMat.SetInt("_SampleCount", sampleCount);
-        blurMat.SetFloat("_BlurSize", blurSize);
+        RenderFeatureManager.Instance.EnableRenderFeature(targetRenderFeature);
+    }
+    public void StopBlur()
+    {
+        RenderFeatureManager.Instance.DisableRenderFeature(targetRenderFeature);
     }
 }
