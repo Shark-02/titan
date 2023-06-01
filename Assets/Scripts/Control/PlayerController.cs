@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] AudioController act;
     public Transform camParent;
     public CharacterController player;
-    public GameObject Obstacle;
+    public GameObject Obstacle, audioplayertxt;
+    public AudioClip[] clips;
     public float moveSpeed;
     public float jumpVelocity;
     InputCommand command;
@@ -62,7 +64,7 @@ public class PlayerController : MonoBehaviour
                 v.y = jumpVelocity;
             }
         }
-        Logger.Log("isAirBorne:" + isAirBorne + "\nisCrouch:" + command.isCrouchHold);
+        //Logger.Log("isAirBorne:" + isAirBorne + "\nisCrouch:" + command.isCrouchHold);
         currentVelocity = v;
         //Debug.Log(v);
         player.Move(currentVelocity * Time.deltaTime);
@@ -81,14 +83,25 @@ public class PlayerController : MonoBehaviour
             Coma();
         }
     }
+
+    private IEnumerator PlayAI(float time,AudioClip ap)
+    {
+        yield return new WaitForSeconds(time);
+        audioplayertxt.GetComponent<AudioSource>().PlayOneShot(ap);
+
+    }
     private IEnumerator Comacoroutine(float comatime,float comaduration)
     {
         coma = true;
         CurtainController.Instance.ShowCurtain(comatime);
         audioplayer.Pause();
+        StartCoroutine(PlayAI(5.0f, clips[0]));
+        StartCoroutine(PlayAI(13.0f, clips[1]));
         yield return new WaitForSeconds(comaduration);
         Debug.Log("Coroutine ended after " + comaduration + " seconds.");
+        
         CurtainController.Instance.HideCurtain(1);
+        StartCoroutine(act.PlayAudioClips());
         NavPathArrow.Instance.points[1] = seaend;
         NavPathArrow.Instance.ShowPath();
         Obstacle.SetActive(true);

@@ -13,8 +13,8 @@ public class Logger : MonoBehaviour
         if (!Instance)
             Instance = this;
     }
-    public static void Log(string content)
-    {
-        Instance.text.text = content;
-    }
+    //public static void Log(string content)
+    //{
+        //Instance.text.text = content;
+    //}
 }

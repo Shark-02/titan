@@ -85,6 +85,7 @@
     <Compile Include="Assets\Egamea\Shared Assets\CodeStage\AdvancedFPSCounter\Scripts\Label\LabelEffect.cs" />
     <Compile Include="Assets\Egamea\ConjureScape\Scripts\ColliderManager.cs" />
     <Compile Include="Assets\Scripts\Rocket.cs" />
+    <Compile Include="Assets\Scripts\AudioController.cs" />
     <Compile Include="Assets\Scripts\Control\KeysForPCTest.cs" />
     <Compile Include="Assets\Scripts\NavPathArrow.cs" />
     <Compile Include="Assets\Egamea\Shared Assets\CodeStage\AdvancedFPSCounter\Scripts\Utils\AFPSRenderRecorder.cs" />

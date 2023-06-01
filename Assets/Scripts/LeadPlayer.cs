@@ -7,7 +7,7 @@ using UnityEngine.Rendering.Universal;
 
 public class LeadPlayer : MonoBehaviour
 {
-    //public GameObject camera;
+    public GameObject audioplayertxt;
     [SerializeField]DissolveController dc1,dc2/*,dc3*/;
     [SerializeField] explodeController /*ec1,*/ec2, ec3;
     [SerializeField] NavPathArrow npa;
@@ -60,6 +60,7 @@ public class LeadPlayer : MonoBehaviour
         }
         if (other.gameObject.name == "EndTarget")
         {
+            audioplayer.GetComponent<AudioSource>().PlayOneShot(clips[1]);
             dc1.active = true;
             dc2.active = true;
             //dc3.active = true;
