@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class CurtainController : MonoBehaviour
 {
     [SerializeField] Image curtain;
+
     public static CurtainController Instance { get => instance; }
     static CurtainController instance;
     private void Start()

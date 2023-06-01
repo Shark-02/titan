@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public Transform camParent;
     public CharacterController player;
-
+    public GameObject Obstacle;
     public float moveSpeed;
     public float jumpVelocity;
     InputCommand command;
@@ -19,12 +19,14 @@ public class PlayerController : MonoBehaviour
     public float comaduration = 20;    //»èÃÔ¼ä¸ô
     public float comatime = 0.5f; //»èÃÔÊ±³¤
     public Transform seaend;
-
+    AudioSource audioplayer,hitplayer;
     static PlayerController instance;
     public static PlayerController Instance => instance;
     private void Start()
     {
         instance = this;
+        audioplayer = GetComponent<AudioSource>();
+        hitplayer=GameObject.Find("Target").GetComponent<AudioSource>();
     }
     public void HandleInput(InputCommand command)
     {
@@ -75,6 +77,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
+            hitplayer.Play();
             Coma();
         }
     }
@@ -82,11 +85,13 @@ public class PlayerController : MonoBehaviour
     {
         coma = true;
         CurtainController.Instance.ShowCurtain(comatime);
+        audioplayer.Pause();
         yield return new WaitForSeconds(comaduration);
         Debug.Log("Coroutine ended after " + comaduration + " seconds.");
         CurtainController.Instance.HideCurtain(1);
         NavPathArrow.Instance.points[1] = seaend;
         NavPathArrow.Instance.ShowPath();
+        Obstacle.SetActive(true);
         coma = false;
     }
     void Killed()

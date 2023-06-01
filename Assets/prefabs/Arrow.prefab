@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4062820691373279343}
   - component: {fileID: 3724492814641463388}
   - component: {fileID: 8770213504235408350}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
