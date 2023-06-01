@@ -19,6 +19,7 @@ public class NavPathArrow : MonoBehaviour
 
     void Start()
     {
+
         if (instance == null)
             instance = this;
         //箭头宽度缩放值

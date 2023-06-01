@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
-
+using UnityEngine.SceneManagement;
 
 public class LeadPlayer : MonoBehaviour
 {
@@ -15,12 +15,13 @@ public class LeadPlayer : MonoBehaviour
     [SerializeField] List<RocketTurret> rts;
     CameraShake cmshake;
     public AudioClip[] clips;
-    AudioSource audioplayer;
+    AudioSource audioplayer,ads;
     Volume blur;
     [SerializeField] SandStormManager sandStormManager;
     // Start is called before the first frame update
     void Start()
     {
+        ads = audioplayertxt.GetComponent<AudioSource>();
         //ая╥Л
         //dc1 = GameObject.Find("crack").GetComponent<DissolveController>();
         //dc2 = GameObject.Find("crack02").GetComponent<DissolveController>();
@@ -84,12 +85,19 @@ public class LeadPlayer : MonoBehaviour
         else if(other.gameObject.name=="ShootersTrigger")
         {
             StartCoroutine("ShootersCoroutine");
+            audioplayer.clip=clips[4];
+            audioplayer.Play();
+            ads.PlayOneShot(clips[3]);
             Destroy(other.gameObject);
         }
         else if (other.gameObject.name == "SeaEnd")
         {
+            audioplayer.Stop();
             Destroy(other.gameObject);
             NavPathArrow.Instance.HidePath();
+            ads.clip=clips[2];
+            ads.Play();
+            StartCoroutine(ChangeScene(ads.clip.length));
         }
     }
 
@@ -111,5 +119,12 @@ public class LeadPlayer : MonoBehaviour
             shooter.arrived = true;
             yield return new WaitForSeconds(2f);
         }
+    }
+
+    IEnumerator ChangeScene(float time)
+    {
+        yield return new WaitForSeconds(time);
+        ads.Pause();
+        SceneManager.LoadScene("Undersea");
     }
 }

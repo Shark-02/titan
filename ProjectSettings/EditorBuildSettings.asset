@@ -8,6 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Egamea/Terrains/15Mars/Terrain_URP.unity
     guid: eb8208dd74d61ad46beb6651ae385eb6
+  - enabled: 1
+    path: Assets/Egamea/Terrains/15Mars/Undersea.unity
+    guid: 04468edb42f180e4ea9e55af625f85f3
   m_configObjects:
     Unity.XR.PXR.Settings: {fileID: 11400000, guid: 62212839eb4dfd7408919f8a63295cb3, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 563d7256ce68a4d4daf0acdee2977b74, type: 2}

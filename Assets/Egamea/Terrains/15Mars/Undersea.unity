@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.34505662, g: 0.2544084, b: 0.19059521, a: 1}
+  m_IndirectSpecularColor: {r: 0.34536415, g: 0.2548245, b: 0.19094959, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -308,6 +308,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 187772949}
   m_CullTransparentMesh: 1
+--- !u!1 &263753529
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 263753531}
+  - component: {fileID: 263753530}
+  m_Layer: 0
+  m_Name: UnderseaManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &263753530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263753529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85a5ca16c73525b468f736a0c0c0114b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetRenderFeature: UnderseaFeature
+--- !u!4 &263753531
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263753529}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &265206778
 GameObject:
   m_ObjectHideFlags: 0
@@ -505,6 +550,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a685753d08a49c4fb9c09bab8e8e7b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UIC: {fileID: 0}
   act: {fileID: 0}
   camParent: {fileID: 152362104}
   player: {fileID: 266215009}
@@ -519,7 +565,6 @@ MonoBehaviour:
   coma: 0
   comaduration: 20
   comatime: 0.5
-  seaend: {fileID: 0}
 --- !u!114 &266215008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -625,7 +670,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 266215002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 500, y: 7, z: 500}
+  m_LocalPosition: {x: 500, y: 156.1, z: 500}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6111,7 +6156,6 @@ GameObject:
   m_Component:
   - component: {fileID: 984519308}
   - component: {fileID: 984519309}
-  - component: {fileID: 984519310}
   m_Layer: 0
   m_Name: RenderFeatureManager
   m_TagString: Untagged
@@ -6147,19 +6191,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   universalRendererData: {fileID: 11400000, guid: 51586c1fe1c18044eb0e093f648a5c42, type: 2}
---- !u!114 &984519310
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 984519307}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85a5ca16c73525b468f736a0c0c0114b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetRenderFeature: UnderseaFeature
 --- !u!1 &1056410138
 GameObject:
   m_ObjectHideFlags: 0

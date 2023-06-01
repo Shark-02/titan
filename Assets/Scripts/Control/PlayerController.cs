@@ -1,9 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] UIFadeController UIC;
     [SerializeField] AudioController act;
     public Transform camParent;
     public CharacterController player;
@@ -20,7 +22,7 @@ public class PlayerController : MonoBehaviour
     public bool coma;
     public float comaduration = 20;    //»èÃÔ¼ä¸ô
     public float comatime = 0.5f; //»èÃÔÊ±³¤
-    public Transform seaend;
+    //public Transform seaend;
     AudioSource audioplayer,hitplayer;
     static PlayerController instance;
     public static PlayerController Instance => instance;
@@ -102,8 +104,9 @@ public class PlayerController : MonoBehaviour
         
         CurtainController.Instance.HideCurtain(1);
         StartCoroutine(act.PlayAudioClips());
-        NavPathArrow.Instance.points[1] = seaend;
-        NavPathArrow.Instance.ShowPath();
+        //UIC.UI_FadeIn_Event();
+        //NavPathArrow.Instance.points[1] = seaend;
+        //NavPathArrow.Instance.ShowPath();
         Obstacle.SetActive(true);
         coma = false;
     }
