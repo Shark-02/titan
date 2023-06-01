@@ -474,7 +474,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2e329a060714f141acbb0d27bcf4c33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerController: {fileID: 266215006}
   camParent: {fileID: 152362104}
   xSensitivity: 5
   ySensitivity: -5
@@ -491,7 +490,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fbf1bf5b7a2a2c479c8bbc3242f1941, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerController: {fileID: 266215006}
   xrOrigin: {fileID: 266215012}
   jumpThreshold: 0.2
   crouchThreshold: -0.5
@@ -507,13 +505,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a685753d08a49c4fb9c09bab8e8e7b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  act: {fileID: 0}
   camParent: {fileID: 152362104}
   player: {fileID: 266215009}
+  Obstacle: {fileID: 0}
+  audioplayertxt: {fileID: 0}
+  clips: []
   moveSpeed: 10
   jumpVelocity: 10
   gravityValue: 10
   isAirBorne: 0
   isCrouch: 0
+  coma: 0
+  comaduration: 20
+  comatime: 0.5
+  seaend: {fileID: 0}
 --- !u!114 &266215008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6153,6 +6159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85a5ca16c73525b468f736a0c0c0114b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetRenderFeature: UnderseaFeature
 --- !u!1 &1056410138
 GameObject:
   m_ObjectHideFlags: 0
@@ -7108,7 +7115,7 @@ MonoBehaviour:
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
   m_Cameras: []
-  m_RendererIndex: -1
+  m_RendererIndex: 1
   m_VolumeLayerMask:
     serializedVersion: 2
     m_Bits: 1
