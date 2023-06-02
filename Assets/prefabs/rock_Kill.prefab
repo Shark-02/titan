@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  selfSpeed: 50
+  selfSpeed: 1
   rotateSpeed: 45
   hitted: 0
   rocketTurret: {fileID: 0}
