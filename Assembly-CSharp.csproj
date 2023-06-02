@@ -81,13 +81,17 @@
     <Compile Include="Assets\Egamea\Shared Assets\CodeStage\AdvancedFPSCounter\Scripts\Enums\OperationMode.cs" />
     <Compile Include="Assets\Shader\BlurController.cs" />
     <Compile Include="Assets\Egamea\Shared Assets\CodeStage\AdvancedFPSCounter\Scripts\CountersData\Abstract\UpdatebleCounterData.cs" />
+    <Compile Include="Assets\Shader\UnderseaController.cs" />
+    <Compile Include="Assets\Scripts\UIFadeController.cs" />
     <Compile Include="Assets\Scripts\Control\DeviceSelector.cs" />
+    <Compile Include="Assets\Scripts\SeaAudioController.cs" />
     <Compile Include="Assets\Egamea\Shared Assets\CodeStage\AdvancedFPSCounter\Scripts\Label\LabelEffect.cs" />
     <Compile Include="Assets\Egamea\ConjureScape\Scripts\ColliderManager.cs" />
     <Compile Include="Assets\Scripts\Rocket.cs" />
     <Compile Include="Assets\Scripts\AudioController.cs" />
     <Compile Include="Assets\Scripts\Control\KeysForPCTest.cs" />
     <Compile Include="Assets\Scripts\NavPathArrow.cs" />
+    <Compile Include="Assets\Shader\UnderseaFeature.cs" />
     <Compile Include="Assets\Egamea\Shared Assets\CodeStage\AdvancedFPSCounter\Scripts\Utils\AFPSRenderRecorder.cs" />
     <Compile Include="Assets\Shader\FogFeature.cs" />
     <Compile Include="Assets\Egamea\Shared Assets\Scripts\iTween.cs" />
@@ -106,9 +110,6 @@
     <Compile Include="Assets\Egamea\Shared Assets\CodeStage\AdvancedFPSCounter\Scripts\CountersData\Abstract\BaseCounterData.cs" />
     <Compile Include="Assets\Scripts\Control\PCPlayerController.cs" />
     <Compile Include="Assets\Egamea\Shared Assets\Scripts\Optimization\TerrainOptimizer.cs" />
-    <Compile Include="Assets\Shader\UnderseaFeature.cs" />
-    <Compile Include="Assets\Shader\UnderseaController.cs" />
-    <Compile Include="Assets\Scripts\UIFadeController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Egamea\Shared Assets\TerrainShader\Standard-FirstPass-Color.shader" />

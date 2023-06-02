@@ -7,6 +7,7 @@ public class AudioController : MonoBehaviour
 {
 
     [SerializeField] UIFadeController UIC;
+    [SerializeField] BlurController BC;
     public Button playButton;
     public AudioClip[] audioClips;
     private AudioSource audioSource;
@@ -24,6 +25,7 @@ public class AudioController : MonoBehaviour
 
     public IEnumerator PlayAudioClips()
     {
+        //BC.StartBlur();
         yield return new WaitForSeconds(1.0f);
         while (true)
         {
@@ -61,6 +63,10 @@ public class AudioController : MonoBehaviour
                     //yield return new WaitForSeconds(audioSource.clip.length/2);
                     NavPathArrow.Instance.points[1] = seaend;
                     NavPathArrow.Instance.ShowPath();
+                }
+                else if(currentClipIndex == 2)
+                {
+                    //BC.StopBlur();
                 }
 
             }
