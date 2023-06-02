@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class LeadPlayer : MonoBehaviour
 {
-    public GameObject audioplayertxt;
+    public GameObject audioplayertxt,audiosand;
     [SerializeField]DissolveController dc1,dc2/*,dc3*/;
     [SerializeField] explodeController /*ec1,*/ec2, ec3;
     [SerializeField] NavPathArrow npa;
@@ -15,7 +15,7 @@ public class LeadPlayer : MonoBehaviour
     [SerializeField] List<RocketTurret> rts;
     CameraShake cmshake;
     public AudioClip[] clips;
-    AudioSource audioplayer,ads;
+    AudioSource audioplayer,ads,audios;
     Volume blur;
     [SerializeField] SandStormManager sandStormManager;
     // Start is called before the first frame update
@@ -42,6 +42,7 @@ public class LeadPlayer : MonoBehaviour
         //Ê¯Í··¢Éä
         rt = GameObject.Find("ShootSpot").GetComponentInChildren<RocketTurret>();
         audioplayer = GetComponent<AudioSource>();
+        audios = audiosand.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -62,7 +63,7 @@ public class LeadPlayer : MonoBehaviour
         }
         if (other.gameObject.name == "EndTarget")
         {
-            audioplayer.GetComponent<AudioSource>().PlayOneShot(clips[1]);
+            audioplayer.PlayOneShot(clips[1]);
             dc1.active = true;
             dc2.active = true;
             //dc3.active = true;
@@ -93,6 +94,9 @@ public class LeadPlayer : MonoBehaviour
         else if(other.gameObject.name=="SandStormTrigger")
         {
             sandStormManager.StartSandStorm(20f);
+            ads.PlayOneShot(clips[5]);
+            audios.clip = clips[6];
+            audios.Play();
             Destroy(other.gameObject);
         }
         else if (other.gameObject.name == "SeaEnd")

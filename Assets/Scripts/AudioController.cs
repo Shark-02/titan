@@ -25,7 +25,7 @@ public class AudioController : MonoBehaviour
 
     public IEnumerator PlayAudioClips()
     {
-        //BC.StartBlur();
+        BC.StartBlur();
         yield return new WaitForSeconds(1.0f);
         while (true)
         {
@@ -66,7 +66,7 @@ public class AudioController : MonoBehaviour
                 }
                 else if(currentClipIndex == 2)
                 {
-                    //BC.StopBlur();
+                    BC.StopBlur();
                 }
 
             }
