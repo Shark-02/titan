@@ -9,6 +9,7 @@ public class HealthBarCtrl : MonoBehaviour
     public static float energy;
     public Slider slider;
     public float decreaseRate = 1f;
+    [SerializeField] GameObject gameover;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,8 +42,24 @@ public class HealthBarCtrl : MonoBehaviour
         // 初始化当前血量
         slider.value = energy;
     }
+    [HideInInspector] public bool dead;
     void Die()
     {
-        Debug.Log("Die");
+        if (!dead)
+            dead = true;
+        else
+            return;
+        StartCoroutine("DieCoroutine");
+    }
+    IEnumerator DieCoroutine()
+    {
+        CurtainController.Instance.ShowCurtain(1f);
+        yield return new WaitForSeconds(1f);
+        gameover.SetActive(true);
+        StoryShow_TMP.isStart = true;
+    }
+    public void SetDecreaseRate(float targetRate)
+    {
+        decreaseRate = targetRate;
     }
 }

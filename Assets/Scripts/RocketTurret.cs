@@ -18,7 +18,7 @@ public class RocketTurret : MonoBehaviour
         if (LeadPlayer.iserupt)
         {
             fireSpeed -= Time.deltaTime;
-            Debug.Log("前" + hitted + "------");
+            //Debug.Log("前" + hitted + "------");
             if (arrived && !hitted && fireSpeed < 0)
             {
                 fireSpeed = 2;
@@ -27,7 +27,8 @@ public class RocketTurret : MonoBehaviour
             //Debug.Log("后" + hitted + "------");
             if (hitted && !handledHit)
             {
-                handledHit = true;
+                hitted = false;
+                handledHit = !killPlayer;
                 PlayerController.Instance.HitByStone(killPlayer);
             }
         }

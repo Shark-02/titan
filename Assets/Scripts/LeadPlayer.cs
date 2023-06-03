@@ -106,6 +106,14 @@ public class LeadPlayer : MonoBehaviour
         }
         else if (other.gameObject.name == "SeaEnd")
         {
+            foreach (var shooter in rts)
+            {
+                shooter.arrived = false;
+            }
+            foreach(var rock in GameObject.FindGameObjectsWithTag("Rock"))
+            {
+                Destroy(rock);
+            }
             audioplayer.Stop();
             Destroy(other.gameObject);
             NavPathArrow.Instance.HidePath();
@@ -130,7 +138,7 @@ public class LeadPlayer : MonoBehaviour
         foreach (var shooter in rts)
         {
             shooter.arrived = true;
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(2 / 3f);
         }
     }
 

@@ -28,7 +28,7 @@ public class StoryShow_TMP : MonoBehaviour
     void Start()
     {
         wordContent = TextCompnt.text;
-        TextCompnt.text="";
+        TextCompnt.text = "";
     }
 
     void Update()
@@ -44,7 +44,7 @@ public class StoryShow_TMP : MonoBehaviour
             {
                 timer = 0;//重置
                 wordNumber++;//文字数量+1
-
+                //Debug.Log("wordNumber:" + wordNumber + "|actualNumber:" + wordContent.Length);
                 //Substring() 官方文档解释：从此实例检索子字符串。 子字符串从指定的字符位置开始且具有指定的长度。
                 TextCompnt.text = wordContent.Substring((0), wordNumber);//数字数量的起始字符位置（从零开始）
                 if (wordNumber >= wordContent.Length)//数字数量=文字的长度

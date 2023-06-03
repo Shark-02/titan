@@ -11,6 +11,7 @@ TagManager:
   - lead
   - Target
   - lead2
+  - Rock
   layers:
   - Default
   - TransparentFX

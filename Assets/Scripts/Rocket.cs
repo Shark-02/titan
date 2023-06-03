@@ -110,7 +110,7 @@ public class Rocket : MonoBehaviour
                         //Destroy(tempFX, 1);       //等待 1秒 销毁刚才创建生成的爆炸特效
                         hitted = true; //击中
                         rocketTurret.hitted = hitted;
-                        Debug.Log(hitted);
+                        //Debug.Log(hitted);
                     }
                     transform.position += selfSpeed * Time.deltaTime * dir;
                     transform.eulerAngles += randomRotateSpeed * Time.deltaTime;

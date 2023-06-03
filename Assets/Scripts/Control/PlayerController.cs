@@ -76,14 +76,17 @@ public class PlayerController : MonoBehaviour
     }
     public void HitByStone(bool killPlayer)
     {
-        if(killPlayer)
-        {
-            TakeDamage();
-        }
-        else
+        if (!healthBar.dead)
         {
             hitplayer.Play();
-            Coma();
+            if (killPlayer)
+            {
+                TakeDamage();
+            }
+            else
+            {
+                Coma();
+            }
         }
     }
 
@@ -109,11 +112,14 @@ public class PlayerController : MonoBehaviour
         //NavPathArrow.Instance.points[1] = seaend;
         //NavPathArrow.Instance.ShowPath();
         Obstacle.SetActive(true);
+        PanelStyleChange.Instance.TurnEmergencyMode();
+        healthBar.decreaseRate *= 5;
+        healthBar.DecreaseHealth(HealthBarCtrl.energy / 2);
         coma = false;
     }
     void TakeDamage()
     {
-        healthBar.DecreaseHealth(10);
+        healthBar.DecreaseHealth(200);
     }
     void Coma()
     {

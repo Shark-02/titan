@@ -71,7 +71,7 @@ public class NavPathArrow : MonoBehaviour
     //»­Â·¾¶
     private void DrawLine(Vector3 start, Vector3 end, int index)
     {
-        Debug.Log(transform.gameObject.name);
+        //Debug.Log(transform.gameObject.name);
         MeshRenderer mr;
         if (index >= lines.Count)
         {
