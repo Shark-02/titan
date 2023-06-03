@@ -21,8 +21,12 @@ public class SeaAudioController : MonoBehaviour
     private bool isPlaying = true;//是否需要播放声音
     //public XRController controller;
     public Transform seaend;
-    public LightParticleManager lightParticle;
-    public ParticleSystemForceField particleForceField;
+    [SerializeField] LightParticleManager lightParticle;
+    [SerializeField] ParticleSystemForceField particleForceField;
+    [SerializeField] AudioSource bgmAudio;
+    [SerializeField] AudioSource mysteryAudio;
+    [SerializeField] Text[] acceptTexts;
+    Color particleColor = new Color(0.706f, 0.9384183f, 1);
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -94,10 +98,10 @@ public class SeaAudioController : MonoBehaviour
                         lightParticle.StopLightParticle();
                         yield return new WaitForSeconds(totTime * .7f);
                         lightParticle.particlePlane.GetComponent<Collider>().enabled = false;
+                        CurtainController.Instance.ShowCurtain(5f);
                         yield return new WaitForSeconds(totTime * .3f);
                         audioSource.Stop();
                         isPlaying = false;
-                        CurtainController.Instance.ShowCurtain(3f);
                         StartCoroutine(DelayChangeScene(5));
                     }
                 }
@@ -109,6 +113,16 @@ public class SeaAudioController : MonoBehaviour
     }
     IEnumerator DelayChangeScene(float delayTime)
     {
+        yield return new WaitForSeconds(delayTime);
+        float audioFadeTime = delayTime * .5f;
+        float audioFadeTimeFull = audioFadeTime;
+        delayTime -= audioFadeTime;
+        while (audioFadeTime > 0)
+        {
+            audioFadeTime -= Time.deltaTime;
+            bgmAudio.volume = audioFadeTime / audioFadeTimeFull;
+            yield return null;
+        }
         yield return new WaitForSeconds(delayTime);
         UnityEngine.SceneManagement.SceneManager.LoadScene("spaceship");
     }
@@ -145,18 +159,46 @@ public class SeaAudioController : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         particleForceField.gravity = -20;
-        yield return new WaitForSeconds(.2f);
+        yield return new WaitForSeconds(1f);
         particleForceField.gravity = 6;
         var emission = lightParticle.targetParticle.emission;
         float startMult = emission.rateOverTimeMultiplier;
-        float endMult = startMult * 40;
-        float sumTime = 4;
-        for(float cntSum=0;cntSum<sumTime;cntSum+=Time.deltaTime)
+        float endMult = startMult * 60;
+        mysteryAudio.Play();
+        float sumTime = 3;
+        for (float cntSum = 0; cntSum < sumTime; cntSum += Time.deltaTime)
         {
             emission.rateOverTimeMultiplier = cntSum / sumTime * (endMult - startMult) + startMult;
+            bgmAudio.volume = 1 - cntSum / sumTime;
             yield return null;
         }
         yield return new WaitForSeconds(3);
+        CurtainController.Instance.ShowCurtain(0);
+        CurtainController.Instance.SetCurtainColor(particleColor);
+        lightParticle.targetParticle.gameObject.SetActive(false);
+        Debug.Log("!");
+        for (int i = 0; i < acceptTexts.Length; ++i)
+        {
+            sumTime = 0;
+            Color c = acceptTexts[i].color;
+            while (sumTime < 2)
+            {
+                sumTime += Time.deltaTime;
+                c.a = sumTime / 2;
+                acceptTexts[i].color = c;
+                yield return null;
+            }
+            c.a = 1;
+            acceptTexts[i].color = c;
+            yield return new WaitForSeconds(1f);
+        }
+        for(sumTime=0;sumTime<2f;sumTime+=Time.deltaTime)
+        {
+            CurtainController.Instance.SetCurtainColor(Color.Lerp(particleColor, Color.black, sumTime / 2));
+            yield return null;
+        }
+        CurtainController.Instance.SetCurtainColor(Color.black);
+        yield return new WaitForSeconds(5f);
         UnityEngine.SceneManagement.SceneManager.LoadScene(gameObject.scene.name);
     }
 }

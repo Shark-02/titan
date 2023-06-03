@@ -6,6 +6,15 @@ public class BlurController : MonoBehaviour
 {
     public string targetRenderFeature = "BlurFeature";
     public Material blurMat;
+    public float pingpongTime = 2;
+    public float intensity = 10;
+    //public void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.Q))
+    //        StartBlur();
+    //    if (Input.GetKeyDown(KeyCode.E))
+    //        StopBlur();
+    //}
     public void StartBlur()
     {
         StartCoroutine("PingPong");
@@ -18,9 +27,10 @@ public class BlurController : MonoBehaviour
     {
         RenderFeatureManager.Instance.EnableRenderFeature(targetRenderFeature);
         float sumTime = 0;
-        while(true)
+        while (true)
         {
-            blurMat.SetFloat("_BlurSize", Mathf.PingPong(sumTime, 1));
+            sumTime += Time.deltaTime;
+            blurMat.SetFloat("_BlurSize", Mathf.PingPong(sumTime, pingpongTime) * intensity);
             yield return null;
         }
     }
@@ -28,12 +38,13 @@ public class BlurController : MonoBehaviour
     {
         StopCoroutine("PingPong");
         float cntBlur = blurMat.GetFloat("_BlurSize");
-        while(cntBlur>0)
+        while (cntBlur > 0)
         {
-            cntBlur -= Time.deltaTime;
+            cntBlur -= Time.deltaTime * intensity * 2 / pingpongTime;
             blurMat.SetFloat("_BlurSize", cntBlur);
             yield return null;
         }
+        blurMat.SetFloat("_BlurSize", 0);
         RenderFeatureManager.Instance.DisableRenderFeature(targetRenderFeature);
     }
 }
