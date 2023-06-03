@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class LightParticleManager : MonoBehaviour
 {
-    [SerializeField] ParticleSystem targetParticle;
+    public ParticleSystem targetParticle;
+    public LightParticlePlane particlePlane;
     ParticleSystem.EmissionModule emission;
     private void Awake()
     {
