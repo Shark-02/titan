@@ -18,7 +18,7 @@ public class RocketTurret : MonoBehaviour
         if (LeadPlayer.iserupt)
         {
             fireSpeed -= Time.deltaTime;
-            Debug.Log("前" + hitted + "------");
+            //Debug.Log("前" + hitted + "------");
             if (arrived && !hitted && fireSpeed < 0)
             {
                 fireSpeed = 2;

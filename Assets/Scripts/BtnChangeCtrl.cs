@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class BtnChangeCtrl : MonoBehaviour
 {
+    private AsyncOperation asyncLoad;
     int num = 0;
     string OriBtnName = "BT_Jump_0";
     string OriBPName = "PB0";
@@ -21,6 +22,7 @@ public class BtnChangeCtrl : MonoBehaviour
         TPName= OriSTName+num;
         BtnName = OriBtnName + num;
         TextName= OriTextName + num;
+        StartCoroutine(AsyncLoading());
     }
 
     // Update is called once per frame
@@ -72,6 +74,14 @@ public class BtnChangeCtrl : MonoBehaviour
 
     public void OnMissionClicked()
     {
-        SceneManager.LoadScene("Terrain_URP");
+        asyncLoad.allowSceneActivation = true;
     }
+
+    IEnumerator AsyncLoading()
+    {
+        asyncLoad = SceneManager.LoadSceneAsync("Terrain_URP");
+        asyncLoad.allowSceneActivation = false;
+        yield return null;
+    } // Update is called once per frame
+
 }

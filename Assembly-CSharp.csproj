@@ -59,6 +59,7 @@
     <Compile Include="Assets\Scripts\Control\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Control\Logger.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
+    <Compile Include="Assets\Scripts\BtnChangeCtrl.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
     <Compile Include="Assets\Scripts\FX_Destory.cs" />
     <Compile Include="Assets\Scripts\Control\InputCommand.cs" />
@@ -151,7 +152,7 @@
     <Compile Include="Assets\Egamea\Shared Assets\CodeStage\AdvancedFPSCounter\Scripts\CountersData\Abstract\BaseCounterData.cs" />
     <Compile Include="Assets\Scripts\Control\PCPlayerController.cs" />
     <Compile Include="Assets\Egamea\Shared Assets\Scripts\Optimization\TerrainOptimizer.cs" />
-    <Compile Include="Assets\Scripts\BtnChangeCtrl.cs" />
+    <Compile Include="Assets\Scripts\RayCtrl.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
