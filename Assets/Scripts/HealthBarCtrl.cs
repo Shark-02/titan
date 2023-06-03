@@ -10,10 +10,18 @@ public class HealthBarCtrl : MonoBehaviour
     public Slider slider;
     public float decreaseRate = 1f;
     [SerializeField] GameObject gameover;
+    public bool shouldRechargeEnergy;
     // Start is called before the first frame update
     void Start()
     {
-        SetMaxHealth(MaxEnergy);
+        if (shouldRechargeEnergy)
+            SetMaxHealth(MaxEnergy);
+        else
+        {
+            slider.maxValue = MaxEnergy;
+            ++energy;
+            slider.value = energy;
+        }
     }
 
     // Update is called once per frame

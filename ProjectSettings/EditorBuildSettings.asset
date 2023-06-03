@@ -11,10 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Egamea/Terrains/15Mars/Terrain_URP.unity
     guid: eb8208dd74d61ad46beb6651ae385eb6
-  - enabled: 0
+  - enabled: 1
     path: Assets/Egamea/Terrains/15Mars/Undersea.unity
     guid: 04468edb42f180e4ea9e55af625f85f3
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/spaceship.unity
     guid: d6d5bd358f6e5584586df5d84df0164e
   m_configObjects:

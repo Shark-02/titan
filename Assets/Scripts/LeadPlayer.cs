@@ -19,6 +19,7 @@ public class LeadPlayer : MonoBehaviour
     AudioSource audioplayer,ads,audios;
     Volume blur;
     [SerializeField] SandStormManager sandStormManager;
+    [SerializeField] HealthBarCtrl healthBar;
     // Start is called before the first frame update
     void Start()
     {
@@ -120,6 +121,7 @@ public class LeadPlayer : MonoBehaviour
             ads.clip=clips[2];
             ads.Play();
             StartCoroutine(ChangeScene(ads.clip.length));
+            healthBar.decreaseRate = 0;
         }
     }
 

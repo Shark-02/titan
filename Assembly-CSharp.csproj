@@ -155,6 +155,8 @@
     <Compile Include="Assets\Scripts\BtnChangeCtrl.cs" />
     <Compile Include="Assets\Scripts\PanelStyleChange.cs" />
     <Compile Include="Assets\Scripts\ImageBlink.cs" />
+    <Compile Include="Assets\Scripts\InjectOption.cs" />
+    <Compile Include="Assets\Scripts\DialogueBoxSetter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

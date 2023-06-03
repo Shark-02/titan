@@ -15,6 +15,7 @@ public class AudioController : MonoBehaviour
     private bool isPlaying = true;
     public XRController controller;
     public Transform seaend;
+    [SerializeField] GameObject injectOption;
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -66,7 +67,8 @@ public class AudioController : MonoBehaviour
                 }
                 else if(currentClipIndex == 2)
                 {
-                    BC.StopBlur();
+                    injectOption.SetActive(true);
+                    //BC.StopBlur();
                 }
 
             }
