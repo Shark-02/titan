@@ -15,12 +15,14 @@ public class LeadPlayer : MonoBehaviour
     [SerializeField] List<RocketTurret> rts;
     CameraShake cmshake;
     public AudioClip[] clips;
+    public static bool iserupt;
     AudioSource audioplayer,ads,audios;
     Volume blur;
     [SerializeField] SandStormManager sandStormManager;
     // Start is called before the first frame update
     void Start()
     {
+        iserupt = false;
         ads = audioplayertxt.GetComponent<AudioSource>();
         //ая╥Л
         //dc1 = GameObject.Find("crack").GetComponent<DissolveController>();
@@ -43,6 +45,8 @@ public class LeadPlayer : MonoBehaviour
         rt = GameObject.Find("ShootSpot").GetComponentInChildren<RocketTurret>();
         audioplayer = GetComponent<AudioSource>();
         audios = audiosand.GetComponent<AudioSource>();
+        audioplayer.clip=clips[7];
+        audioplayer.Play();
     }
 
     // Update is called once per frame
@@ -63,6 +67,7 @@ public class LeadPlayer : MonoBehaviour
         }
         if (other.gameObject.name == "EndTarget")
         {
+            iserupt= true;
             audioplayer.PlayOneShot(clips[1]);
             dc1.active = true;
             dc2.active = true;
