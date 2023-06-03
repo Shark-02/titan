@@ -1,2 +1,6 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+Assets/Egamea/Terrains/15Mars/MeshFiles/normal.bmp filter=lfs diff=lfs merge=lfs -text
+Assets/Egamea/Terrains/15Mars/MeshFiles/albedo.bmp filter=lfs diff=lfs merge=lfs -text
+Assets/Audio/宇宙bgm.mp3 filter=lfs diff=lfs merge=lfs -text
+Assets/TextMesh[[:space:]]pro/Fonts/Aldrich[[:space:]]SDF.asset filter=lfs diff=lfs merge=lfs -text

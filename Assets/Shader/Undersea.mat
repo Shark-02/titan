@@ -33,7 +33,7 @@ Material:
     - _VignetteRadiusInner: 0.207
     - _VignetteRadiusOuter: 0.753
     m_Colors:
-    - _BlendColor: {r: 0, g: 0, b: 0.5660378, a: 1}
-    - _FogColor: {r: 0, g: 0.30092517, b: 0.7830189, a: 1}
+    - _BlendColor: {r: 0, g: 0, b: 0.5377358, a: 1}
+    - _FogColor: {r: 0.028978268, g: 0.17468241, b: 0.41509432, a: 1}
     - _VignetteColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []

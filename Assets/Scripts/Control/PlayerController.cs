@@ -1,9 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] UIFadeController UIC;
     [SerializeField] AudioController act;
     public Transform camParent;
     public CharacterController player;
@@ -20,10 +22,11 @@ public class PlayerController : MonoBehaviour
     public bool coma;
     public float comaduration = 20;    //»èÃÔ¼ä¸ô
     public float comatime = 0.5f; //»èÃÔÊ±³¤
-    public Transform seaend;
+    //public Transform seaend;
     AudioSource audioplayer,hitplayer;
     static PlayerController instance;
     public static PlayerController Instance => instance;
+    [SerializeField] HealthBarCtrl healthBar;
     private void Start()
     {
         instance = this;
@@ -73,14 +76,17 @@ public class PlayerController : MonoBehaviour
     }
     public void HitByStone(bool killPlayer)
     {
-        if(killPlayer)
-        {
-            Killed();
-        }
-        else
+        if (!healthBar.dead)
         {
             hitplayer.Play();
-            Coma();
+            if (killPlayer)
+            {
+                TakeDamage();
+            }
+            else
+            {
+                Coma();
+            }
         }
     }
 
@@ -102,14 +108,18 @@ public class PlayerController : MonoBehaviour
         
         CurtainController.Instance.HideCurtain(1);
         StartCoroutine(act.PlayAudioClips());
-        NavPathArrow.Instance.points[1] = seaend;
-        NavPathArrow.Instance.ShowPath();
+        //UIC.UI_FadeIn_Event();
+        //NavPathArrow.Instance.points[1] = seaend;
+        //NavPathArrow.Instance.ShowPath();
         Obstacle.SetActive(true);
+        PanelStyleChange.Instance.TurnEmergencyMode();
+        healthBar.decreaseRate *= 5;
+        healthBar.DecreaseHealth(HealthBarCtrl.energy / 2);
         coma = false;
     }
-    void Killed()
+    void TakeDamage()
     {
-        Debug.Log("Killed");
+        healthBar.DecreaseHealth(200);
     }
     void Coma()
     {

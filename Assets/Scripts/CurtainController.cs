@@ -29,6 +29,11 @@ public class CurtainController : MonoBehaviour
             StopCoroutine(coroutine);
         coroutine = StartCoroutine(HideCurtainCoroutine(timePeriod));
     }
+    public void SetCurtainColor(Color targetColor)
+    {
+        targetColor.a = curtain.color.a;
+        curtain.color = targetColor;
+    }
     IEnumerator ShowCurtainCoroutine(float timePeriod)
     {
         curtain.raycastTarget = true;

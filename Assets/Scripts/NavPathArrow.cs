@@ -19,6 +19,7 @@ public class NavPathArrow : MonoBehaviour
 
     void Start()
     {
+
         if (instance == null)
             instance = this;
         //箭头宽度缩放值
@@ -70,7 +71,7 @@ public class NavPathArrow : MonoBehaviour
     //画路径
     private void DrawLine(Vector3 start, Vector3 end, int index)
     {
-        Debug.Log(transform.gameObject.name);
+        //Debug.Log(transform.gameObject.name);
         MeshRenderer mr;
         if (index >= lines.Count)
         {

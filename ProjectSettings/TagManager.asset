@@ -11,6 +11,8 @@ TagManager:
   - lead
   - Target
   - lead2
+  - ObRock
+  - Rock
   layers:
   - Default
   - TransparentFX

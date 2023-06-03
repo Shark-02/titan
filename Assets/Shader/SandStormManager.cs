@@ -35,7 +35,7 @@ public class SandStormManager : MonoBehaviour
         {
             sumTime += Time.deltaTime;
             fogMat.SetFloat("_Density", fogDensity * sumTime / fadeTime);
-            Debug.Log(fogDensity * sumTime / fadeTime);
+            //Debug.Log(fogDensity * sumTime / fadeTime);
             yield return null;
         }
         fogMat.SetFloat("_Density", fogDensity);

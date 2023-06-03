@@ -25,6 +25,8 @@ public class Rocket : MonoBehaviour
 
     private float lastTime;
     private Vector3 lastPos;
+    Vector3 dir;
+    Vector3 randomRotateSpeed;
 
     private void Start()
     {
@@ -35,7 +37,8 @@ public class Rocket : MonoBehaviour
         }
         else if(rocketType==RocketType.NoFollow&&target!=null)
         {
-            transform.LookAt(target.transform.position);
+            randomRotateSpeed = Random.rotation.eulerAngles;
+            dir = target.transform.position - transform.position;
         }
         //rocketTurret.Instance.hitted = this.hitted;
     }
@@ -70,6 +73,7 @@ public class Rocket : MonoBehaviour
                         Debug.Log(hitted);
                         rocketTurret.hitted = hitted;
                     }
+                    transform.position += transform.forward * Time.deltaTime * selfSpeed;
                     break;
                 case RocketType.Prognosis:
                     float targetSpeed = MathTool.GetRightSpeed(lastPos, target.position, lastTime, Time.time);
@@ -95,6 +99,7 @@ public class Rocket : MonoBehaviour
 
                         Debug.Log(hitted);
                     }
+                    transform.position += transform.forward * Time.deltaTime * selfSpeed;
                     break;
                 case RocketType.NoFollow:
                     float currentDist3 = Vector3.Distance(this.transform.position, target.transform.position);
@@ -105,12 +110,13 @@ public class Rocket : MonoBehaviour
                         //Destroy(tempFX, 1);       //等待 1秒 销毁刚才创建生成的爆炸特效
                         hitted = true; //击中
                         rocketTurret.hitted = hitted;
-                        Debug.Log(hitted);
+                        //Debug.Log(hitted);
                     }
+                    transform.position += selfSpeed * Time.deltaTime * dir;
+                    transform.eulerAngles += randomRotateSpeed * Time.deltaTime;
                     break;
             }
-        }
-        transform.position += transform.forward * Time.deltaTime * selfSpeed;      //向前移动
+        }     //向前移动
     }
 
     //当 有物体进入到 自己的触发器时 调用一次

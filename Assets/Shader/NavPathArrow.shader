@@ -13,6 +13,7 @@ Shader "Custom/NavPathArrow"
             Cull Off
             //Alpha»ìºÏ
             Blend SrcAlpha OneMinusSrcAlpha
+            ZWrite Off
 
             Pass
             {

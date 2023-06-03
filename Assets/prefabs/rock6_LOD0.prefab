@@ -102,4 +102,3 @@ MonoBehaviour:
   hitted: 0
   rocketTurret: {fileID: 0}
   rocketType: 1
-  keepChasing: 1
