@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
     AudioSource audioplayer,hitplayer;
     static PlayerController instance;
     public static PlayerController Instance => instance;
+    [SerializeField] HealthBarCtrl healthBar;
     private void Start()
     {
         instance = this;
@@ -77,7 +78,7 @@ public class PlayerController : MonoBehaviour
     {
         if(killPlayer)
         {
-            Killed();
+            TakeDamage();
         }
         else
         {
@@ -110,9 +111,9 @@ public class PlayerController : MonoBehaviour
         Obstacle.SetActive(true);
         coma = false;
     }
-    void Killed()
+    void TakeDamage()
     {
-        Debug.Log("Killed");
+        healthBar.DecreaseHealth(10);
     }
     void Coma()
     {
