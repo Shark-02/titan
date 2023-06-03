@@ -6,15 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Scene00_Start.unity
+    guid: 443e2ab3d3b8f6e46918b71b0f588368
+  - enabled: 1
     path: Assets/Egamea/Terrains/15Mars/Terrain_URP.unity
     guid: eb8208dd74d61ad46beb6651ae385eb6
-  - enabled: 1
+  - enabled: 0
     path: Assets/Egamea/Terrains/15Mars/Undersea.unity
     guid: 04468edb42f180e4ea9e55af625f85f3
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/spaceship.unity
     guid: d6d5bd358f6e5584586df5d84df0164e
   m_configObjects:
-    Unity.XR.PXR.Settings: {fileID: 11400000, guid: 62212839eb4dfd7408919f8a63295cb3, type: 2}
-    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 563d7256ce68a4d4daf0acdee2977b74, type: 2}
+    Unity.XR.PXR.Settings: {fileID: 11400000, guid: 5e84671addf48e04b8e6d6501aab3cf2, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 3b964e36de863314f9f6ca604ff91703, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 2d31f74001fb2e547a56f4fcc1150c52, type: 2}
