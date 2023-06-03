@@ -15,6 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/spaceship.unity
     guid: d6d5bd358f6e5584586df5d84df0164e
   m_configObjects:
-    Unity.XR.PXR.Settings: {fileID: 11400000, guid: 62212839eb4dfd7408919f8a63295cb3, type: 2}
+    Unity.XR.PXR.Settings: {fileID: 11400000, guid: 5e84671addf48e04b8e6d6501aab3cf2, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 563d7256ce68a4d4daf0acdee2977b74, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 2d31f74001fb2e547a56f4fcc1150c52, type: 2}

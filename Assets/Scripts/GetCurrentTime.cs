@@ -12,7 +12,7 @@ public class GetCurrentTime : MonoBehaviour
     private int day;
     TMP_Text text;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         year = DateTime.Now.Year;
         month = DateTime.Now.Month;

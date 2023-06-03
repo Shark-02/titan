@@ -19,15 +19,19 @@ public class StoryShow_TMP : MonoBehaviour
 
     public string wordContent;//----文字内容
 
-    void Awake()
+    private void Awake()
     {
         TextCompnt = this.GetComponent<TMP_Text>();//从当前物体获取到Text组件
-        wordContent = TextCompnt.text;
-        TextCompnt.text="";
         isStart = false;
     }
 
-    void FixedUpdate()
+    void Start()
+    {
+        wordContent = TextCompnt.text;
+        TextCompnt.text="";
+    }
+
+    void Update()
     {
         StartTyping();
     }
