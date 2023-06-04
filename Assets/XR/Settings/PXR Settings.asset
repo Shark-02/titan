@@ -15,5 +15,5 @@ MonoBehaviour:
   stereoRenderingModeAndroid: 0
   systemDisplayFrequency: 0
   optimizeBufferDiscards: 1
-  enableAppSpaceWarp: 0
+  enableAppSpaceWarp: 1
   systemSplashScreen: {fileID: 0}

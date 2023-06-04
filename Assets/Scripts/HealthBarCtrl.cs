@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class HealthBarCtrl : MonoBehaviour
 {
-    public float MaxEnergy = 1000;
+    public float MaxEnergy = 2000;
     public static float energy;
     public Slider slider;
     public float decreaseRate = 1f;

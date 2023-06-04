@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.548
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1406585425}
-  m_IndirectSpecularColor: {r: 0.25661168, g: 0.1861428, b: 0.13642764, a: 0.548}
+  m_IndirectSpecularColor: {r: 0.25637233, g: 0.18581894, b: 0.13615182, a: 0.548}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1672,6 +1672,10 @@ PrefabInstance:
     - target: {fileID: 5370946961593909470, guid: 0f80789955456484b88fa48a9695a020, type: 3}
       propertyPath: m_Name
       value: windjana-drill-hole-kimberley-outcrop-mars (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5370946961593909470, guid: 0f80789955456484b88fa48a9695a020, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f80789955456484b88fa48a9695a020, type: 3}
@@ -141439,6 +141443,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1550063270}
     m_Modifications:
+    - target: {fileID: 642787039402847563, guid: 0f80789955456484b88fa48a9695a020, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4738560187788728932, guid: 0f80789955456484b88fa48a9695a020, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -141489,7 +141497,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5370946961593909470, guid: 0f80789955456484b88fa48a9695a020, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f80789955456484b88fa48a9695a020, type: 3}
@@ -494966,6 +494974,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1550063270}
     m_Modifications:
+    - target: {fileID: 642787039402847563, guid: 0f80789955456484b88fa48a9695a020, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4738560187788728932, guid: 0f80789955456484b88fa48a9695a020, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -495013,6 +495025,14 @@ PrefabInstance:
     - target: {fileID: 5370946961593909470, guid: 0f80789955456484b88fa48a9695a020, type: 3}
       propertyPath: m_Name
       value: windjana-drill-hole-kimberley-outcrop-mars (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5370946961593909470, guid: 0f80789955456484b88fa48a9695a020, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6656101633008615095, guid: 0f80789955456484b88fa48a9695a020, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f80789955456484b88fa48a9695a020, type: 3}
@@ -866571,6 +866591,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 100000, guid: 3c24a3d36bebd4649bbaf406e631326a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3c24a3d36bebd4649bbaf406e631326a, type: 3}
       propertyPath: m_RootOrder
       value: 17
@@ -955655,6 +955679,7 @@ GameObject:
   - component: {fileID: 997731796}
   - component: {fileID: 997731795}
   - component: {fileID: 997731799}
+  - component: {fileID: 997731800}
   m_Layer: 0
   m_Name: XR Origin
   m_TagString: Untagged
@@ -955812,7 +955837,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2d0f3580684989a4186198e2dc2f72c5, type: 3}
   - {fileID: 8300000, guid: d11683a1993608f4ea80d7b36e0f1eb7, type: 3}
   sandStormManager: {fileID: 1817529893}
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 796943100}
 --- !u!114 &997731795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -955984,6 +956009,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &997731800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 997731787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcf0a97f5dd91004b89c39c9d2d7132e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &997971482
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1035589,6 +1035626,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1550063270}
     m_Modifications:
+    - target: {fileID: 642787039402847563, guid: 0f80789955456484b88fa48a9695a020, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4738560187788728932, guid: 0f80789955456484b88fa48a9695a020, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1035636,6 +1035677,10 @@ PrefabInstance:
     - target: {fileID: 5370946961593909470, guid: 0f80789955456484b88fa48a9695a020, type: 3}
       propertyPath: m_Name
       value: windjana-drill-hole-kimberley-outcrop-mars (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5370946961593909470, guid: 0f80789955456484b88fa48a9695a020, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f80789955456484b88fa48a9695a020, type: 3}
@@ -1322629,7 +1322674,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_System: {fileID: 1383447565}
-  m_MoveSpeed: 1
+  m_MoveSpeed: 5
   m_EnableStrafe: 1
   m_UseGravity: 1
   m_GravityApplicationMode: 0
@@ -2044653,6 +2044698,10 @@ PrefabInstance:
     - target: {fileID: 5370946961593909470, guid: 0f80789955456484b88fa48a9695a020, type: 3}
       propertyPath: m_Name
       value: windjana-drill-hole-kimberley-outcrop-mars
+      objectReference: {fileID: 0}
+    - target: {fileID: 5370946961593909470, guid: 0f80789955456484b88fa48a9695a020, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f80789955456484b88fa48a9695a020, type: 3}
