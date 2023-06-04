@@ -26,7 +26,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _BlurSize: 18.519268
+    - _BlurSize: 9.450493
     - _SampleCount: 3
     m_Colors: []
   m_BuildTextureStacks: []

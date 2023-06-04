@@ -37,6 +37,7 @@ public class AudioController : MonoBehaviour
 
                     audioSource.clip = audioClips[currentClipIndex];
                     audioSource.Play();
+
                     yield return new WaitForSeconds(audioSource.clip.length);
                     audioSource.Stop();
                     UIC.UI_FadeIn_Event();
